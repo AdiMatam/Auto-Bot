@@ -1,7 +1,6 @@
 #include "pch.hpp"
 #include "helpers.hpp"
 #include "robot.hpp"
-// #include "motor.hpp"
 
 void testRun(Motor* left, int speed) {
     left->setSpeed(speed);
@@ -19,13 +18,3 @@ int main() {
     }
     left.stop();
 }
-
-// pinMode(P11, OUTPUT);
-// pinMode(P13, OUTPUT);
-// pinMode(P15, OUTPUT);
-
-// softPwmWrite(P11, 75);
-// digitalWrite(P13, HIGH);
-// digitalWrite(P15, LOW);
-// delay(1000);
-// softPwmWrite(P11, 0);
