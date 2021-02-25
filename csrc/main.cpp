@@ -1,6 +1,10 @@
-#include "pch.hpp"
+// #include "pch.hpp"
+#include <iostream>
+#include <wiringPi.h>
+
 #include "helpers.hpp"
 #include "motor.hpp"
+
 
 int main() {   
     wiringPiSetup();

@@ -7,12 +7,14 @@ LINKS = -Llib -lwiringPi # -lpthread
 all: build run
 build: compile link
 run:
-	./lib/main.x
+	./main.x
 compile:
-	armg++ -c -Wall -Werror $(FILES) $(INCLUDE)
+	armg++ -c -Wall -Werror $(FILES) $(INCLUDE)  
 link:
-	armg++ main.o -o lib/main.x $(LINKS)
+	armg++ main.o -o main.x $(LINKS)
 pch:
 	armg++ csrc/pch.hpp
 clean:
 	rm -f *.o *.x
+
+# -mfloat-abi=hard -mcpu=cortex-a7 -mfpu=neon-vfpv4

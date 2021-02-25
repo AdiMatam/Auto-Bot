@@ -1,8 +1,12 @@
 #ifndef MOTOR_H
 #define MOTOR_H
 
-#include "pch.hpp"
+// #include "pch.hpp"
+// #include "helpers.hpp"
+
 #include "helpers.hpp"
+#include <iostream>
+#include <wiringPi.h>
 
 class Motor {
 private:
