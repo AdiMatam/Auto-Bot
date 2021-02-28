@@ -2,8 +2,9 @@
 __pycache__
 include
 lib
+notes.txt
 
 *.o
 *.exe
 *.x
-notes.txt
+*.pch

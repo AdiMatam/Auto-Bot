@@ -17,4 +17,4 @@ link:
 pch:
 	$(CC) src/pch.hpp
 clean:
-	rm -f *.o
+	rm -f *.o *.x
