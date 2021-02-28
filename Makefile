@@ -1,20 +1,20 @@
 .SILENT:
 
-FILES = csrc/main.cpp
-INCLUDE = -Iinclude/WiringPi/wiringPi
-LINKS = -Llib -lwiringPi # -lpthread
+CC = "/c/SysGCC/raspberry/bin/arm-linux-gnueabihf-g++.exe"
+USR = /c/SysGCC/raspberry/arm-linux-gnueabihf/sysroot/usr/
+INCLUDE = -I$(USR)include/
+LINKDIR = -L$(USR)lib/
+LINKS = -lwiringPi # -lpthread
 
-all: build run
+FILES = src/main.cpp src/motor.cpp src/robot.cpp
+
 build: compile link
-run:
-	./main.x
+	echo "Successful Build"
 compile:
-	armg++ -c -Wall -Werror $(FILES) $(INCLUDE)  
+	$(CC) -c -Wall -Werror $(FILES) $(INCLUDE)  
 link:
-	armg++ main.o -o main.x $(LINKS)
+	$(CC) $(wildcard *.o) -o main.x $(LINKDIR) $(LINKS)
 pch:
-	armg++ csrc/pch.hpp
+	$(CC) src/pch.hpp
 clean:
-	rm -f *.o *.x
-
-# -mfloat-abi=hard -mcpu=cortex-a7 -mfpu=neon-vfpv4
+	rm -f *.o
