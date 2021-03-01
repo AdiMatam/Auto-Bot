@@ -10,4 +10,8 @@ int main() {
     Motor right(P18, P12, P16);
     Robot robot(&left, &right);
 
+    left.drive(true, 100);
+    delay(1000);
+    left.stop();
+
 }
