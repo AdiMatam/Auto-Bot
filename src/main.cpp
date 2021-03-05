@@ -1,17 +1,15 @@
-#include "pch.hpp"
-#include "helpers.hpp"
-#include "robot.hpp"
+#include "Pch.h"
+#include "Helpers.h"
+#include "Robot.h"
 
-
-int main() {   
+int main() {
     wiringPiSetup();
 
     Motor left(P11, P13, P15);
-    Motor right(P18, P12, P16);
-    Robot robot(&left, &right);
+    // Motor right();
+    // Robot robot(&left, &right);
 
-    left.drive(true, 100);
+    left.drive(true, 80);
     delay(1000);
     left.stop();
-
 }

@@ -6,7 +6,7 @@ INCLUDE = -I$(USR)include/
 LINKDIR = -L$(USR)lib/
 LINKS = -lwiringPi -lpthread
 
-FILES = src/main.cpp src/motor.cpp src/robot.cpp
+FILES = src/Main.cpp src/Motor.cpp src/Robot.cpp
 
 all: build transfer
 build: compile link
@@ -18,6 +18,6 @@ compile:
 link:
 	$(CC) $(wildcard *.o) -o main.x $(LINKDIR) $(LINKS)
 pch:
-	$(CC) src/pch.hpp
+	$(CC) src/Pch.h
 clean:
 	rm -f *.o *.x

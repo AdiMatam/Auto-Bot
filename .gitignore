@@ -2,6 +2,7 @@
 __pycache__
 include
 lib
+misc
 notes.txt
 
 *.o

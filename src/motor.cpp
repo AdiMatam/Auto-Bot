@@ -1,4 +1,4 @@
-#include "motor.hpp"
+#include "Motor.h"
 
 Motor::Motor(Pin enable, Pin pin1, Pin pin2) 
     : mEnable(enable), mPin1(pin1), mPin2(pin2) {
@@ -22,6 +22,8 @@ void Motor::swap() {
     mPin2 = temp;
 }
 
+
+
 void Motor::drive(bool dir, int speed) const {
     softPwmWrite(mEnable, speed);
     digitalWrite(mPin1, dir);
@@ -31,18 +33,3 @@ void Motor::drive(bool dir, int speed) const {
 void Motor::stop() const {
     drive(0, 0);
 }
-
-// int getSpeed() const;
-// void setSpeed(int speed);
-
-// int Motor::getSpeed() const {
-//     return mSpeed;
-// }
-// void Motor::setSpeed(int speed) {
-//     mSpeed = speed;
-// }
-
-
-// void Motor::drive() const {
-//     drive(*mSpeed);
-// }
