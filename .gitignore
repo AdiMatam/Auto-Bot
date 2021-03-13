@@ -1,7 +1,6 @@
 .vscode
+.vs
 __pycache__
-include
-lib
 misc
 notes.txt
 

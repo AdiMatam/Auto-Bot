@@ -1,9 +1,9 @@
 .SILENT:
 
-ROOT    = "~/cross/cross-pi-gcc-8.3.0-0"
-CC      = $(ROOT)/bin/arm-linux-gnueabihf-g++
-INCLUDE = -I .
-LINKDIR = -L$(ROOT)/arm-linux-gnueabihf/libc/lib
+ROOT    = "/home/aditya/cross/cross-pi-gcc-8.3.0-0"
+CC      = arm-linux-gnueabihf-g++
+INCLUDE = -Iinclude
+LINKDIR = -L$(ROOT)/arm-linux-gnueabihf/libc/lib/
 LINKS   = -lwiringPi -lpthread -lrt -lcrypt
 
 FILES = src/Main.cpp src/Motor.cpp src/Robot.cpp
@@ -17,7 +17,7 @@ transfer:
 compile:
 	$(CC) -c -Wall -Werror $(FILES) $(INCLUDE)  
 link:
-	$(CC) $(wildcard *.o) -o $(OUT) $(LINKDIR) $(LINKS)
+	$(CC) Main.o Motor.o Robot.o -o $(OUT) $(LINKDIR) $(LINKS)
 pch:
 	$(CC) src/Pch.h
 clean:
