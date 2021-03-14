@@ -1,9 +1,10 @@
+## FOLDERS
 .vscode
 .vs
 __pycache__
 misc
-notes.txt
 
+## FILE EXTENSIONS
 *.o
 *.exe
 *.x
